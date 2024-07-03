@@ -25,11 +25,7 @@ const server = app.listen(3000);
 applyWSSHandler({
   wss: new ws.Server({ server }),
   router: appRouter,
-  createContext: () => {
-    return {
-      isAdmin: true
-    }
-  }
+  createContext,
 });
 
 export type AppRouter = typeof appRouter;
