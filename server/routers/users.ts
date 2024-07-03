@@ -14,6 +14,6 @@ export const userRouter = t.router({
       console.log(
         `updating user ${req.input.userId} to have the name ${req.input.name}`,
       );
-      return { id: req.input.userId, name: req.input.name,  };
+      return { id: req.input.userId, name: req.input.name };
     }),
 });
