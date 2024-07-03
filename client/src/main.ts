@@ -14,10 +14,11 @@ async function main() {
   // console.log(result)
   // const result = await client.logToServer.mutate("Hi from client")
   // const result = await client.users.get.query({ userId: "1234" });
-  const result = await client.users.update.mutate({
+{/*const result = await client.users.update.mutate({
     userId: "23432",
     name: "Kyle",
-  });
+  });*/}
+  const result = await client.secretData.query()
   console.log(result);
 }
 main();

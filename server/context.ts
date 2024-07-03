@@ -4,6 +4,6 @@ export function createContext({req, res}: CreateExpressContextOptions) {
   return {
     req,
     res,
-    isAdmin: true
+    isAdmin: false
   }
 }
