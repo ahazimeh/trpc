@@ -1,10 +1,12 @@
-import { createTRPCProxyClient, httpBatchLink } from "@trpc/client";
+import { createTRPCProxyClient, httpBatchLink, loggerLink } from "@trpc/client";
 import { AppRouter } from "../../server/api";
 
 const client = createTRPCProxyClient<AppRouter>({
   links: [
-    httpBatchLink({
+    loggerLink(),
+    httpBatchLink({ // httpBatchLink is an ending link // httpLink same as httpBatchLink but it doesn't do any batching
       url: "http://localhost:3000/trpc",
+      headers: { Authorization: "TOKEN" }
     }),
   ],
 });
